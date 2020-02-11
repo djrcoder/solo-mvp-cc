@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 
-export default () => {
+export default function InputForm() {
     const [timeAndDate, setTimeAndDate] = useState("");
     const [distance, setDistance] = useState("");
     const [timeTaken, setTimeTaken] = useState("");
@@ -74,10 +74,5 @@ export default () => {
                 ))}
             </ul>
         </div>
-
-
-
-
     )
-
 };
