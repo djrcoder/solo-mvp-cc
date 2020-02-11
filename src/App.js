@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import InputForm from "./components/InputForm"
+import InputForm from "./components/InputForm";
+
+
+
+
+const tableData = [];
+
 
 // Render chart here 
 // when button is clicked, chart will re-draw with the latest data
@@ -8,17 +14,42 @@ import InputForm from "./components/InputForm"
 
 
 
-
 export default function App() {
+
+  const [totalDistance, setTotalDistance] = useState("");
+  const addDistance = (item) => {
+    setTotalDistance(totalDistance => [...totalDistance, item]);
+  }
+
+  console.log("Distance is", totalDistance)
+
+  if (totalDistance) {
+    totalDistance.map(item => tableData.push(item))
+  }
+
+
+
+  // useEffect(() => {
+
+  // }, [])
+
+  console.log("Table data is", tableData)
+
+
+
+
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src="" className="App-logo" alt="logo" />
+        <br />
+        <br />
+        <img src="unnamed.png" className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to re hjload.
         </p>
       </header>
-      <InputForm />
+      <InputForm distanceAdder={addDistance} />
     </div>
   );
 }
