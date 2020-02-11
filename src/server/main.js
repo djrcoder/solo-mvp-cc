@@ -34,7 +34,7 @@ app.get("/api/runlog", async (req, res) => {
 // Always return the main index.html, so react - router render the route i
 // n the client
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "build", "index.js"));
+    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
 });
 
 module.exports = app;
