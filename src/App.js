@@ -4,7 +4,7 @@ import './App.css';
 // Render chart here 
 // when button is clicked, chart will re-draw with the latest data
 
-import InputForm from "./components/InputForm.js"
+import InputForm from "./components/InputForm"
 
 
 function App() {
