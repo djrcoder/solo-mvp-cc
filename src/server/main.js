@@ -29,9 +29,6 @@ app.get("/api/runlog", async (req, res) => {
     }
 });
 
-app.listen("5000", function () {
-    console.log('Express server listening on port 5000');
-});
 
 
 // Always return the main index.html, so react - router render the route i
