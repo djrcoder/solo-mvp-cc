@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // Render chart here 
 // when button is clicked, chart will re-draw with the latest data
 
 import InputForm from "./components/InputForm"
-
 
 
 function App() {
