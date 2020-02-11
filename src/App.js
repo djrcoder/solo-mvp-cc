@@ -14,7 +14,7 @@ function App() {
       <header className="App-header">
         <img src="" className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to re hjload.
+          Edit <code>src/App.jsx</code> and save to re hjload.
         </p>
       </header>
       <InputForm />
