@@ -29,16 +29,16 @@ app.get("/api/runlog", async (req, res) => {
     }
 });
 
-app.post("/api/runlog/run", async (req, res) => {
-    try {
-        const allLogs = await db.select().table("logs");
-        console.log("logs")
-        res.json(allLogs);
-    } catch (err) {
-        console.error("Error loading log!", err);
-        res.sendStatus(500);
-    }
-})
+// app.post("/api/runlog/run", async (req, res) => {
+//     try {
+//         const allLogs = await db.select().table("logs");
+//         console.log("logs")
+//         res.json(allLogs);
+//     } catch (err) {
+//         console.error("Error loading log!", err);
+//         res.sendStatus(500);
+//     }
+// })
 
 
 

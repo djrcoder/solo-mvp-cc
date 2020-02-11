@@ -24,7 +24,7 @@
     "react-scripts": "3.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node ./src/server/index",
     "serve": "node ./src/server/index",
     "hack": "react-scripts start",
     "build": "react-scripts build",
