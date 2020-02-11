@@ -28,12 +28,13 @@ export default () => {
 
     useEffect(() => {
         async function getData() {
-            const result = await axios.get("http://localhost:3000/api/runlog")
+            const result = await axios("api/runlog")
             // .then((res) => {
             // console.log(res.data)
             // setFetchedData(res.data.json)
             // console.log("Fetched Data", fetchedData)
             // });
+            console.log(result)
             setFetchedData(result.data)
         }
         getData()

@@ -2,15 +2,21 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-require("dotenv").config();
+// require("dotenv").config();
 const knex = require("knex");
 const knexfile = require("../../knexfile");
 
 const db = knex(knexfile);
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     next();
+// });
+
+
+app.use(express.static(path.resolve(__dirname, "..", "build")));
+
+
+console.log("Starting express...");
 
 app.get("/api/runlog", async (req, res) => {
     try {
@@ -23,16 +29,16 @@ app.get("/api/runlog", async (req, res) => {
     }
 });
 
-app.listen("3000", function () {
-    console.log('Express server listening on port 3000');
+app.listen("5000", function () {
+    console.log('Express server listening on port 5000');
 });
 
-app.use(express.static(path.resolve(__dirname, "..", "build")));
 
-
-// Always return the main index.html, so react-router render the route in the client
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
-// });
+// Always return the main index.html, so react - router render the route i
+// n the client
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "build", "index.js"));
+});
 
 module.exports = app;
+

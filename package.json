@@ -2,15 +2,18 @@
   "name": "solomvp",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.20.9",
     "moment": "^2.24.0",
+    "nodemon": "^2.0.2",
     "path": "^0.12.7",
     "pg": "^7.18.1",
     "react": "^16.12.0",
@@ -19,7 +22,8 @@
     "react-scripts": "3.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node ./src/server/main",
+    "hack": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
