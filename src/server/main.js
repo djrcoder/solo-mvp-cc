@@ -45,7 +45,7 @@ app.post("/api/runlog/run", async (req, res) => {
 // Always return the main index.html, so react - router render the route i
 // n the client
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../..", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../../build/index.html"));
 });
 
 
