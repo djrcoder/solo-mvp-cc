@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "serve": "node ./src/server/index",
     "hack": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
