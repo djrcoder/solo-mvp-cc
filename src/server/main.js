@@ -13,7 +13,7 @@ const db = knex(knexfile);
 // });
 
 
-app.use(express.static(path.resolve(__dirname, "..", "build")));
+app.use(express.static(path.resolve(__dirname, "..", "..", "build")));
 
 
 console.log("Starting express...");
