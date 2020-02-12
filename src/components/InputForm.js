@@ -15,16 +15,18 @@ export default function InputForm(props) {
     const disArray = [];
     const label = [];
     const chartDistance = [];
+    const totalTime = [];
 
 
     const submitRun = (props) => {
         const inputDetails = {
             "Time and Date of Run": timeAndDate,
-            "Distance": distance,
+            "distance": distance,
             "Time taken": timeTaken,
             "Name of run": nameOfRun
         }
         console.log("Submitted details", inputDetails)
+
     }
 
 
@@ -33,19 +35,25 @@ export default function InputForm(props) {
 
         async function getData() {
             const result = await axios("api/runlog")
-            console.log(result)
-            disArray.push(result)
             setFetchedData(result.data)
-
             // setDistance(result.data[0].distance)
         }
         getData()
     }, []);
 
+
+
     for (const obj of fetchedData) {
         label.push(obj.id)
         chartDistance.push(obj.distance)
+        totalTime.push(obj.time_taken)
     }
+
+
+
+
+
+
 
     const data = {
         labels: label,
@@ -69,17 +77,8 @@ export default function InputForm(props) {
 
 
     console.log("Fetched", fetchedData)
-
-
-    // const loadAllData = async () => {
-    //     const response = await fetch("http://localhost:3000/api/runlog");
-    //     const data = await response;
-    //     setFetchedData(data.data)
-    //     console.log("Hits", data.values)
-    // }
-
-    // have submit run submit the information to the database
-
+    console.log("dis array in input", disArray)
+    console.log("totaltime is input", totalTime)
 
     return (
 
@@ -90,7 +89,7 @@ export default function InputForm(props) {
             <input type="text" placeholder="Name of run" onChange={e => setNameOfRun(e.target.value)} />
             <button onClick={submitRun}>Submit</button>
             <div>
-                <h2>Bar Example (custom size)</h2>
+                <h2>Distance</h2>
                 <Bar
                     data={data}
                     width={150}
@@ -101,20 +100,26 @@ export default function InputForm(props) {
                 />
             </div>
             <ul>
-                {fetchedData.map(item => (
-                    <li key={item.id}>
-                        Date of Run: <Moment parse="YYYY-MM-DD HH:mm">{item.time_and_date_of_run}</Moment> <br />
-                        Location: {item.name_of_run}   <br />
-                        Distance: {item.distance} kms  <br />
-                        Time taken: {item.time_taken} mins  <br />
-                        <br></br>
-                    </li>
-                ))}
+                <div className="run-segment">
+                    {fetchedData.map(item => (
+                        <ul key={item.id}>
+                            Date of Run: <Moment parse="YYYY-MM-DD HH:mm">{item.time_and_date_of_run}</Moment> <br />
+                            Location: {item.name_of_run}   <br />
+                            Distance: {item.distance} kms  <br />
+                            Time taken: {item.time_taken} mins  <br />
+                            <br></br>
+                        </ul>
+                    ))}
+                </div>
             </ul>
-            <button onClick={(e) => {
-                props.distanceAdder({ disArray })
+
+            <button className="buttons" onClick={(e) => {
+                props.distanceAdder({ chartDistance })
+                props.timeAdder({ totalTime })
             }}> Calculate Average Run</button>
 
         </div>
     )
+
+
 };

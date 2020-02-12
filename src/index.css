@@ -5,13 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #D6F5D8
+  background: #D6F5D8;
+  border: 10px ridge black;
 }
 
 div{
 text-align: center;
-text-shadow: aquamarine;
 }
+
+.run-segment {
+  text-align: center;
+  align-content: center;
+}
+
+.buttons {
+  text-align: center;
+  align-content: center;
+  margin: auto
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
