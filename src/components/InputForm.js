@@ -50,11 +50,6 @@ export default function InputForm(props) {
     }
 
 
-
-
-
-
-
     const data = {
         labels: label,
         datasets: [
@@ -71,15 +66,6 @@ export default function InputForm(props) {
     };
 
 
-
-
-
-
-
-    console.log("Fetched", fetchedData)
-    console.log("dis array in input", disArray)
-    console.log("totaltime is input", totalTime)
-
     return (
 
         <div>
@@ -88,17 +74,7 @@ export default function InputForm(props) {
             <input type="text" placeholder="Time taken" onChange={e => setTimeTaken(e.target.value)} />
             <input type="text" placeholder="Name of run" onChange={e => setNameOfRun(e.target.value)} />
             <button onClick={submitRun}>Submit</button>
-            <div>
-                <h2>Distance</h2>
-                <Bar
-                    data={data}
-                    width={150}
-                    height={50}
-                    options={{
-                        maintainAspectRatio: true
-                    }}
-                />
-            </div>
+
             <ul>
                 <div className="run-segment">
                     {fetchedData.map(item => (
@@ -112,6 +88,18 @@ export default function InputForm(props) {
                     ))}
                 </div>
             </ul>
+
+            <div>
+                <h2>Distance</h2>
+                <Bar
+                    data={data}
+                    width={150}
+                    height={50}
+                    options={{
+                        maintainAspectRatio: true
+                    }}
+                />
+            </div>
 
             <button className="buttons" onClick={(e) => {
                 props.distanceAdder({ chartDistance })

@@ -1,4 +1,14 @@
+This was created during my time as a student at Code Chrysalis
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+
+![Alt text](screenshots/runlog1.png)
+![Alt text](screenshots/runlog2.png)
+![Alt text](screenshots/runlog3.png)
+
 
 ## Available Scripts
 

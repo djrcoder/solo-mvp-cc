@@ -2,15 +2,11 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-// require("dotenv").config();
 const knex = require("knex");
 const knexfile = require("../../knexfile");
 
 const db = knex(knexfile);
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     next();
-// });
+
 
 
 app.use(express.static(path.resolve(__dirname, "..", "..", "build")));
@@ -21,7 +17,6 @@ console.log("Starting express...");
 app.get("/api/runlog", async (req, res) => {
     try {
         const allLogs = await db.select().table("logs");
-        console.log("logs")
         res.json(allLogs);
     } catch (err) {
         console.error("Error loading log!", err);
@@ -32,7 +27,6 @@ app.get("/api/runlog", async (req, res) => {
 app.post("/api/log", async (req, res) => {
     try {
         // const allLogs = await db.select().table("logs");
-        console.log("yo", req)
         req.sendStatus("it got here")
         // res.json(allLogs);
     } catch (err) {
