@@ -21,6 +21,7 @@ git clone https://github.com/djrcoder/solo-mvp-cc.git
 ```
 yarn
 ```
+<<<<<<< HEAD
 
 3. Add your postgres config to the .env file
 ```
@@ -57,3 +58,41 @@ Return all data
 Submit data 
 
 ```
+=======
+
+3. Add your postgres config to the .env file
+```
+DATABASE_URL = postgresql+psycopg2://{Your database username}:password@localhost/locations
+```
+
+4. Migrate and seed your data:  
+```
+yarn knex migrate:latest
+```
+```
+yarn knex seed:run
+```
+
+5. Build:  
+```
+yarn build
+```
+
+6. Start the server:  
+```
+yarn start
+```
+
+
+## Endpoints
+
+### GET /api/runlog  
+Return all locations  
+response (list of locations)
+
+
+### POST /api/log  
+Submit data 
+
+```
+>>>>>>> cfa22d36de5ace3600154fcb87402243a2df2bfc
