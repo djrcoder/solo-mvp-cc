@@ -5,6 +5,7 @@ import { Bar } from 'react-chartjs-2';
 
 
 
+
 export default function InputForm(props) {
     const [timeAndDate, setTimeAndDate] = useState("");
     const [distance, setDistance] = useState("");
@@ -12,7 +13,6 @@ export default function InputForm(props) {
     const [nameOfRun, setNameOfRun] = useState("");
     const [fetchedData, setFetchedData] = useState([]);
 
-    const disArray = [];
     const label = [];
     const chartDistance = [];
     const totalTime = [];
@@ -27,7 +27,27 @@ export default function InputForm(props) {
         }
         console.log("Submitted details", inputDetails)
 
+
+
+
+        async function postData() {
+
+            await axios('api/runlog/log', {
+                time_and_date_of_run: "2020-01-25 14:00:00+09",
+                distance: "4.5",
+                time_taken: "23",
+                name_of_run: "London"
+            }).then(function (response) {
+                console.log("res", response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+        postData()
+
     }
+
+
 
 
 

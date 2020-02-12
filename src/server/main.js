@@ -16,6 +16,7 @@ console.log("Starting express...");
 
 app.get("/api/runlog", async (req, res) => {
     try {
+        console.log("GET")
         const allLogs = await db.select().table("logs");
         res.json(allLogs);
     } catch (err) {
@@ -24,18 +25,16 @@ app.get("/api/runlog", async (req, res) => {
     }
 });
 
-app.post("/api/log", async (req, res) => {
+app.post("/api/runlog/log", async (req, res) => {
     try {
-        // const allLogs = await db.select().table("logs");
-        req.sendStatus("it got here")
+        console.log("POST")
+        await db.insert().table("logs");
         // res.json(allLogs);
     } catch (err) {
         console.error("Error!", err);
         res.sendStatus(500);
     }
 })
-
-
 
 // Always return the main index.html, so react - router render the route i
 // n the client
