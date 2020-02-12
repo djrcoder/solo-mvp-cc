@@ -30,24 +30,20 @@ export default function InputForm(props) {
 
 
 
-        async function postData() {
-
-            await axios('api/runlog/log', {
-                time_and_date_of_run: "2020-01-25 14:00:00+09",
-                distance: "4.5",
-                time_taken: "23",
-                name_of_run: "London"
-            }).then(function (response) {
-                console.log("res", response);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
-        postData()
-
+        // async function postData() {
+        //     await axios('api/runlog/log', {
+        //         time_and_date_of_run: "2020-01-25 14:00:00+09",
+        //         distance: "4.5",
+        //         time_taken: "23",
+        //         name_of_run: "London"
+        //     }).then(function (response) {
+        //         console.log("res", response);
+        //     }).catch(function (error) {
+        //         console.log(error);
+        //     });
+        // }
+        // postData()
     }
-
-
 
 
 
