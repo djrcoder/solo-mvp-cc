@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import Moment from 'react-moment';
 import axios from "axios"
 import { Bar } from 'react-chartjs-2';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 
 
 
@@ -71,7 +74,7 @@ export default function InputForm(props) {
         datasets: [
             {
                 label: 'Distances in km',
-                backgroundColor: 'rgba(255,99,132,0.2)',
+                backgroundColor: 'rgba(255,0,132,0.2)',
                 borderColor: 'rgba(255,99,132,1)',
                 borderWidth: 1,
                 hoverBackgroundColor: 'rgba(255,99,132,0.4)',
@@ -82,14 +85,17 @@ export default function InputForm(props) {
     };
 
 
+
+
     return (
 
         <div>
-            <input type="text" placeholder="Time and Date of Run" onChange={e => setTimeAndDate(e.target.value)} />
-            <input type="text" placeholder="Distance" onChange={e => setDistance(e.target.value)} />
-            <input type="text" placeholder="Time taken" onChange={e => setTimeTaken(e.target.value)} />
-            <input type="text" placeholder="Name of run" onChange={e => setNameOfRun(e.target.value)} />
-            <button onClick={submitRun}>Submit</button>
+            <TextField id="outlined-basic" label="Time and Date of Run"  onChange={e => setTimeAndDate(e.target.value)} />
+            <TextField id="outlined-basic" label="Distance"  onChange={e => setDistance(e.target.value)} />
+            <TextField id="outlined-basic" label="Time Taken"  onChange={e => setTimeTaken(e.target.value)} />
+            <TextField id="outlined-basic" label="Name of Run"  onChange={e => setNameOfRun(e.target.value)} />
+            <p></p>
+            <Button variant="contained" color="primary" onClick={submitRun}>Submit</Button>
 
             <ul>
                 <div className="run-segment">
@@ -117,10 +123,12 @@ export default function InputForm(props) {
                 />
             </div>
 
-            <button className="buttons" onClick={(e) => {
+            <Button variant="contained" color="primary" onClick={(e) => {
                 props.distanceAdder({ chartDistance })
                 props.timeAdder({ totalTime })
-            }}> Calculate Average Run</button>
+            }}> Calculate Average Run</Button>
+
+            
 
         </div>
     )

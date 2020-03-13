@@ -1,12 +1,10 @@
 {
   "name": "solomvp",
   "version": "0.1.0",
-  "engines": {
-    "node": "12.14.0"
-  },
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",

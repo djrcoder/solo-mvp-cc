@@ -1,11 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #D6F5D8;
+  padding-left: 20%;
+  padding-right: 20%;
+  font: fenway;
+  background: rgb(242, 245, 242);
   border: 10px ridge black;
 }
 
