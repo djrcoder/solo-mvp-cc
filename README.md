@@ -24,10 +24,14 @@ yarn
 
 3. Add your postgres config to the .env file
 ```
-DATABASE_URL = postgresql+psycopg2://{Your database username}:password@localhost/locations
+DATABASE_URL = postgresql+psycopg2://{Your database username}:password@localhost/runlog
+
 ```
 
-4. Migrate and seed your data:  
+4. Create a database called runlog within postgres and grant the relevant permissions to your user
+
+
+5. Migrate and seed your data:  
 ```
 yarn knex migrate:latest
 ```
@@ -35,15 +39,17 @@ yarn knex migrate:latest
 yarn knex seed:run
 ```
 
-5. Build:  
+6. Build:  
 ```
 yarn build
 ```
 
-6. Start the server:  
+7. Start the server:  
 ```
 yarn start
 ```
+
+8. Open the app at http://localhost:5000/
 
 
 ## Endpoints
