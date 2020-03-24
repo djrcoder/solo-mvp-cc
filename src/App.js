@@ -7,10 +7,9 @@ export default function App() {
   let distanceAdded = 0;
   let timeAdded = 0;
 
-
-
   const [totalDistance, setTotalDistance] = useState("");
   const [totalTime, setTime] = useState("");
+
   const addDistance = (item) => {
     setTotalDistance(totalDistance => [...totalDistance, item]);
   }

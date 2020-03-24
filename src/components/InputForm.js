@@ -4,9 +4,7 @@ import axios from "axios"
 import { Bar } from 'react-chartjs-2';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-
-
-
+import ListItem from '@material-ui/core/ListItem';
 
 
 export default function InputForm(props) {
@@ -28,10 +26,6 @@ export default function InputForm(props) {
             "Time taken": timeTaken,
             "Name of run": nameOfRun
         }
-        console.log("Submitted details", inputDetails)
-
-
-
 
         // async function postData() {
         //     await axios('api/runlog/log', {
@@ -51,7 +45,6 @@ export default function InputForm(props) {
 
 
     useEffect(() => {
-
         async function getData() {
             const result = await axios("api/runlog")
             setFetchedData(result.data)
@@ -85,15 +78,12 @@ export default function InputForm(props) {
     };
 
 
-
-
     return (
-
         <div>
-            <TextField id="outlined-basic" label="Time and Date of Run"  onChange={e => setTimeAndDate(e.target.value)} />
-            <TextField id="outlined-basic" label="Distance"  onChange={e => setDistance(e.target.value)} />
-            <TextField id="outlined-basic" label="Time Taken"  onChange={e => setTimeTaken(e.target.value)} />
-            <TextField id="outlined-basic" label="Name of Run"  onChange={e => setNameOfRun(e.target.value)} />
+            <TextField id="outlined-basic" label="Time and Date of Run" onChange={e => setTimeAndDate(e.target.value)} />
+            <TextField id="outlined-basic" label="Distance" onChange={e => setDistance(e.target.value)} />
+            <TextField id="outlined-basic" label="Time Taken" onChange={e => setTimeTaken(e.target.value)} />
+            <TextField id="outlined-basic" label="Name of Run" onChange={e => setNameOfRun(e.target.value)} />
             <p></p>
             <Button variant="contained" color="primary" onClick={submitRun}>Submit</Button>
 
@@ -127,11 +117,6 @@ export default function InputForm(props) {
                 props.distanceAdder({ chartDistance })
                 props.timeAdder({ totalTime })
             }}> Calculate Average Run</Button>
-
-            
-
         </div>
     )
-
-
 };
